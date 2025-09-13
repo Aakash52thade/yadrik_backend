@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const noteRoutes = require("./routes/noteRoutes");
 const tenantRoutes = require("./routes/tenantRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.get("/health", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api", noteRoutes);
 app.use("/api/tenants", tenantRoutes);
+app.use("/api/users", userRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
