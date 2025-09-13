@@ -4,6 +4,13 @@ const Tenant = require("../models/Tenant");
 const User = require("../models/User");
 const connectDB = require("../config/db");
 
+// Debug: Check if env vars are loaded
+console.log("Environment variables check:");
+console.log("MONGO_URI:", process.env.MONGO_URI ? "✅ Loaded" : "❌ Missing");
+console.log("JWT_SECRET:", process.env.JWT_SECRET ? "✅ Loaded" : "❌ Missing");
+console.log("PORT:", process.env.PORT ? "✅ Loaded" : "❌ Missing");
+console.log("---");
+
 const seedData = async () => {
   try {
     await connectDB();
